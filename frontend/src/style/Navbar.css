@@ -1,0 +1,64 @@
+/* NAVBAR CONTAINER */
+.navbar {
+    width: 100%;
+    padding: 15px 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(10px);
+
+    /* soft inner border instead of harsh border */
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+        0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* LOGO */
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #f8fafc;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+/* NAV LINKS CONTAINER */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+/* LINKS */
+.nav-link {
+    color: #cbd5f5;
+    font-size: 1rem;
+    font-weight: 500;
+
+    padding: 6px 12px;
+    border-radius: 8px;
+
+    transition: all 0.25s ease;
+}
+
+/* HOVER EFFECT */
+.nav-link:hover {
+    color: #ffffff;
+    background: rgba(96, 165, 250, 0.15);
+}
+
+/* ACTIVE (optional if you add NavLink later) */
+.nav-link.active {
+    background: rgba(96, 165, 250, 0.25);
+    color: #60a5fa;
+}
+
+.logo:hover
+{
+    color: #ffffff;
+    background: rgba(96, 165, 250, 0.15);
+}

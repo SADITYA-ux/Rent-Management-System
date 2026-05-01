@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name" : "Lamine Yamal",
+    "amount": 21000,
+    "month": "May",
+    "paidOn": "2026-05-01",
+    "status": "paid"
+  },
+  {
+    "id": 2,
+    "name" : "Pedri",
+    "amount": 25000,
+    "month": "June",
+    "paidOn": "2026-06-01",
+    "status": "pending"
+  }
+]

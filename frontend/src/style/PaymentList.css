@@ -1,0 +1,172 @@
+.payments-list {
+    width: 100%;
+    max-width: 1000px;
+
+    background: rgba(15, 23, 42, 0.75);
+    border-radius: 15px;
+    padding: 25px;
+
+    backdrop-filter: blur(10px);
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+        0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* TABLE */
+.payments-table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+}
+
+/* HEADER */
+.payments-table thead {
+    background: rgba(15, 23, 42, 0.9);
+}
+
+.payments-table th {
+    padding: 14px;
+    text-align: left;
+
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+
+    color: #94a3b8;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ROWS */
+.payments-table td {
+    padding: 14px;
+    color: #e2e8f0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* HOVER EFFECT */
+.payments-table tbody tr {
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.payments-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: scale(1.01);
+}
+
+/* EMPHASIZE RENT COLUMN */
+.payments-table td:nth-child(2) {
+    font-weight: 600;
+    color: #38bdf8;
+}
+
+/* DATE STYLING */
+.payments-table td:nth-child(4),
+.payments-table td:nth-child(5) {
+    color: #cbd5f5;
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .payments-table thead {
+        display: none;
+    }
+
+    .payments-table,
+    .payments-table tbody,
+    .payments-table tr,
+    .payments-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .payments-table tr {
+        margin-bottom: 15px;
+        background: rgba(15, 23, 42, 0.6);
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    .payments-table td {
+        text-align: right;
+        padding: 10px;
+        position: relative;
+    }
+
+    .payments-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        color: #94a3b8;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+    }
+}
+
+/* TOTAL REVENUE BOX */
+.total-revenue {
+    margin-top: 20px;
+    padding: 18px 20px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    background: rgba(56, 189, 248, 0.08);
+    border-radius: 12px;
+
+    border: 1px solid rgba(56, 189, 248, 0.2);
+
+    box-shadow: 
+        inset 0 0 0 1px rgba(255,255,255,0.05),
+        0 5px 15px rgba(0,0,0,0.3);
+}
+
+.revenue-card {
+    margin-top: 25px;
+    max-width: 1000px;
+
+    padding: 25px;
+    border-radius: 15px;
+
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Title */
+.revenue-card h2 {
+    margin: 0;
+    font-size: 1rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Amount */
+.revenue-card p {
+    margin-top: 10px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #22c55e;
+}
+
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+.paid {
+    background: rgb(17, 255, 0);
+    color: rgb(0, 0, 0);
+}
+
+.pending {
+    background: rgb(255, 0, 0);
+    color: rgb(0, 0, 0);
+}

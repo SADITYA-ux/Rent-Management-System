@@ -1,0 +1,69 @@
+/* FOOTER CONTAINER */
+.footer {
+    width: 100%;
+    margin-top: 40px;
+    padding: 30px 25px;
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 25px;
+
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+        0 -5px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* EACH SECTION */
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* TITLE */
+.footer-section h3 {
+    color: #f8fafc;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+/* TEXT */
+.footer-section p {
+    color: #cbd5f5;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* LINKS */
+.footer-section a {
+    display: block;
+    color: #cbd5f5;
+    text-decoration: none;
+
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+
+    transition: all 0.25s ease;
+}
+
+/* LINK HOVER */
+.footer-section a:hover {
+    color: #60a5fa;
+    transform: translateX(3px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section a:hover {
+        transform: none;
+    }
+}

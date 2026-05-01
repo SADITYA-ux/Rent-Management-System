@@ -1,0 +1,172 @@
+/* PAGE LAYOUT */
+.home-page {
+    min-height: 100vh;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    background-image: 
+        linear-gradient(
+            rgba(15, 23, 42, 0.75),
+            rgba(15, 23, 42, 0.75)
+        ), 
+        url('/bg/1.jpg');
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: #e2e8f0;
+}
+
+/* HEADER */
+.heading {
+    /* smoother blending */
+    position: relative;
+    isolation: isolate;
+
+    padding: 40px 30px;
+    text-align: center;
+    width: 100%;
+
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* overlay for blending image */
+.heading::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 42, 0.7),
+        rgba(15, 23, 42, 0.9)
+    );
+
+    backdrop-filter: blur(4px);
+    z-index: -1;
+}
+
+.heading h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+
+    color: #f8fafc;
+    font-weight: 700;
+
+    /* subtle instead of glow */
+    letter-spacing: 1px;
+}
+
+.heading p {
+    font-size: 1.5rem;
+    font-weight: 500;
+
+    color: #cbd5f5;
+}
+
+/* STATS CONTAINER */
+.apartment-stats {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+/* CARD */
+.stat-card {
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+
+    padding: 20px 30px;
+    min-width: 220px;
+
+    text-align: center;
+
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* TEXT */
+.stat-card h2 {
+    font-size: 1.1rem;
+    color: #94a3b8; /* muted label */
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.stat-card p {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #f8fafc;
+}
+
+/* OPTIONAL COLOR CODING */
+.stat-card:nth-child(1) p {
+    color: #60a5fa; /* blue */
+}
+
+.stat-card:nth-child(2) p {
+    color: #34d399; /* green */
+}
+
+.stat-card:nth-child(3) p {
+    color: #f87171; /* red */
+}
+
+.info-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+.info-card {
+    background: rgba(15, 23, 42, 0.75);
+    border-radius: 15px;
+    padding: 20px 25px;
+    max-width: 320px;
+    flex: 1;
+
+    backdrop-filter: blur(10px);
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+        0 10px 30px rgba(0, 0, 0, 0.4);
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.12),
+        0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+.info-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #f8fafc;
+}
+
+.info-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #cbd5f5;
+}

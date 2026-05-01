@@ -1,0 +1,131 @@
+.apartment-list {
+    width: 100%;
+    max-width: 1000px;
+
+    background: rgba(15, 23, 42, 0.75);
+    border-radius: 15px;
+    padding: 25px;
+
+    backdrop-filter: blur(10px);
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+        0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* TABLE */
+.apartment-table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+}
+
+/* HEADER */
+.apartment-table thead {
+    background: rgba(15, 23, 42, 0.9);
+}
+
+.apartment-table th {
+    padding: 14px;
+    text-align: left;
+
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+
+    color: #94a3b8;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ROWS */
+.apartment-table td {
+    padding: 14px;
+    color: #e2e8f0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* HOVER EFFECT */
+.apartment-table tbody tr {
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.apartment-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: scale(1.01);
+}
+
+/* STATUS COLORS */
+.apartment-table td:last-child {
+    font-weight: 600;
+}
+
+.apartment-table tr td:last-child:contains("Available") {
+    color: #34d399;
+}
+
+.apartment-table tr td:last-child:contains("Occupied") {
+    color: #f87171;
+}
+
+/* FALLBACK (if :contains doesn't work in your browser) */
+.status-available {
+    color: #34d399;
+    font-weight: 600;
+}
+
+.status-occupied {
+    color: #f87171;
+    font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .apartment-table thead {
+        display: none;
+    }
+
+    .apartment-table,
+    .apartment-table tbody,
+    .apartment-table tr,
+    .apartment-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .apartment-table tr {
+        margin-bottom: 15px;
+        background: rgba(15, 23, 42, 0.6);
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    .apartment-table td {
+        text-align: right;
+        padding: 10px;
+        position: relative;
+    }
+
+    .apartment-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        color: #94a3b8;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+    }
+}
+
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+.occupied {
+    background: rgb(0, 85, 255);
+    color: rgb(0, 0, 0);
+}
+
+.vacant {
+    background: rgb(208, 255, 0);
+    color: rgb(0, 0, 0);
+}

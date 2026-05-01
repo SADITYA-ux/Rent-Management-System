@@ -1,0 +1,136 @@
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(rgba(15, 23, 42, 0.75)),
+        url('/public/bg/1.jpg');
+
+    background-size: cover;
+    background-position: center;
+
+    color: #e2e8f0;
+}
+
+/* SIDEBAR */
+.side-bar {
+    width: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    padding: 20px 10px;
+
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(10px);
+
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ICON BUTTONS */
+.side-bar button {
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: transparent;
+    color: #cbd5e1;
+
+    font-size: 1.3rem;
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.side-bar button:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: scale(1.05);
+    color: #f8fafc;
+}
+
+/* MAIN CONTENT AREA */
+.main-content {
+    flex: 1;
+    padding: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* HOME PAGE WRAPPER */
+.home-page {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* HEADER */
+.heading {
+    padding: 30px;
+    text-align: center;
+
+    background: rgba(15, 23, 42, 0.75);
+    border-radius: 15px;
+
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.heading h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: #f8fafc;
+}
+
+.heading p {
+    color: #94a3b8;
+    font-size: 1rem;
+}
+
+/* INFO SECTION */
+.info-section {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* INFO CARDS */
+.info-card {
+    flex: 1;
+    min-width: 250px;
+
+    padding: 20px;
+
+    background: rgba(15, 23, 42, 0.75);
+    border-radius: 15px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+        0 10px 30px rgba(0, 0, 0, 0.4);
+
+    transition: transform 0.2s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-4px);
+}
+
+.info-card h2 {
+    color: #f8fafc;
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}

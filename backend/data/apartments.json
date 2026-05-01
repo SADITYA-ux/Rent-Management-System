@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "number": "101",
+    "floor": "1",
+    "size": "2BHK",
+    "rent": "21000",
+    "status": "occupied"
+  },
+  {
+    "id": 2,
+    "number": "102",
+    "floor": "1",
+    "size": "3BHK",
+    "rent": "25000",
+    "status": "occupied"
+  }
+]
