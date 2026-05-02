@@ -7,31 +7,31 @@ designed for apartment complex managers.
 
 ### Home Page
 
-![Home](public/screenshots/home.png)
+![Home](frontend/public/screenshots/home.png)
 
 ### Dashboard
 
-![Dashboard](public/screenshots/dashboard.png)
+![Dashboard](frontend/public/screenshots/dashboard.png)
 
 ### Apartments
 
-![Apartments](public/screenshots/apartments.png)
+![Apartments](frontend/public/screenshots/apartments.png)
 
 ### Tenants
 
-![Tenants](public/screenshots/tenants.png)
+![Tenants](frontend/public/screenshots/tenants.png)
 
 ### Payments
 
-![Payments](public/screenshots/payments.png)
+![Payments](frontend/public/screenshots/payments.png)
 
 ### Staff
 
-![Staff](public/screenshots/staff.png)
+![Staff](frontend/public/screenshots/staff.png)
 
 ### Registration Form
 
-![Form](public/screenshots/form.png)
+![Form](frontend/public/screenshots/form.png)
 
 ## Features
 
