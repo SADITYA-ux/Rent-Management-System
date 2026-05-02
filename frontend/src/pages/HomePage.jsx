@@ -10,11 +10,11 @@ export default function HomePage()
     {
         fetch("http://localhost:5000/apartments")
         .then( res => res.json() )  // convert response to JSON
-        .then( data => setApartments(data) )// save to state")
+        .then( data => setApartments(data) )// save to state
 
         fetch("http://localhost:5000/tenants")
         .then( res => res.json() )        // convert response to JSON
-        .then( data => setTenants(data) )  // save to state")
+        .then( data => setTenants(data) )  // save to state
     },[]);
 
     return(
