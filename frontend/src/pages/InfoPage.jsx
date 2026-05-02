@@ -59,7 +59,7 @@ export default function InfoPage()
                     <p>{tenants.filter ( t => 
                         {
                             const today = new Date();
-                            const leaseEnd = new Date(t.lease_end);
+                            const leaseEnd = new Date(t.leaseEnd); 
                             const timeDiff = leaseEnd.getTime() - today.getTime();
                             const daysDiff = timeDiff / (1000 * 3600 * 24);
                             return daysDiff > 0 && daysDiff <= 30;
