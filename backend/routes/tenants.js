@@ -28,6 +28,20 @@ router.get( '/:id' , (req , res) => {
     res.json(tenant);
 })
 
+router.delete( '/:id' , (req , res) =>
+{
+    let tenants = gettenants();
+
+    const filtered = tenants.filter( t => t.id !== parseInt(req.params.id));
+
+    fs.writeFileSync(
+        path.join( __dirname , '../data/tenants.json'),
+        JSON.stringify( filtered , null ,2)
+    )
+
+    res.json({ message : "tenant deleted"})
+})
+
 router.post( '/' , (req , res) => {
     const tenants = gettenants();
 

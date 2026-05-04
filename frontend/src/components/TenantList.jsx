@@ -12,6 +12,20 @@ export default function TenantList()
         .then( data => setTenant(data) )  // save to state")
     },[]);
 
+    function handleDelete( id )
+    {
+        fetch(`http://localhost:5000/tenants/${id}` , 
+            {
+                method : "DELETE"
+
+            })
+            .then( res => res.json() )
+            .then( () => 
+            {
+                setTenant( tenants.filter( t => t.is !== id))
+            })
+    }
+
     return(
         <div className = "tenant-list">
             <table className = "tenant-table">
@@ -22,6 +36,7 @@ export default function TenantList()
                         <th>Rent</th>
                         <th>LeaseStart</th>
                         <th>LeaseEnd</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
 
@@ -42,6 +57,11 @@ export default function TenantList()
                                     <span className = {`lease-status ${ daysLeft <= 30 ? "expiring" : "active"}`}>
                                         {t.leaseEnd}
                                     </span>
+                                </td>
+                                <td>
+                                    <button className = "delete-btn" onClick={() => handleDelete(t.id)}>
+                                        Delete
+                                    </button>
                                 </td>
                             </tr>
                         )

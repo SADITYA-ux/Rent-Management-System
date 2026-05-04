@@ -28,6 +28,20 @@ router.get( '/:id' , (req , res) => {
     res.json(employee);
 })
 
+router.delete( '/:id' , (req , res) =>
+{
+    let staff = getStaff();
+
+    const filtered = staff.filter( s => s.id !== parseInt(req.params.id));
+
+    fs.writeFileSync(
+        path.join( __dirname , '../data/staff.json'),
+        JSON.stringify( filtered , null ,2)
+    )
+
+    res.json({ message : "Staff member deleted"})
+})
+
 router.post ( '/' , (req , res) => 
 {
     const staff = getStaff();

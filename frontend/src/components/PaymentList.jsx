@@ -12,6 +12,20 @@ export default function PaymentList()
         .then( data => setpayments(data) )  // save to state")
     },[]);
 
+    function handleDelete(id)
+    {
+        fetch(`http://localhost:5000/payments/${id}` ,
+            {
+                method : "DELETE"
+            })
+
+            .then ( res => res.json())
+            .then ( () =>
+            {
+                setpayments( payments.filter( p => p.id !== id))
+            })
+    }
+
     return(
         <div className = "payments-list">
             <table className = "payments-table">
@@ -22,6 +36,7 @@ export default function PaymentList()
                         <th>PayedDate</th>
                         <th>Month</th>
                         <th>status</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
 
@@ -37,6 +52,11 @@ export default function PaymentList()
                                     <span className = {`status-badge ${t.status.toLowerCase()}`}>
                                         {t.status}
                                     </span>
+                                </td>
+                                <td>
+                                    <button className = "delete-btn" onClick={() => handleDelete(t.id)}>
+                                        Delete
+                                    </button>
                                 </td>
                             </tr>
                         )

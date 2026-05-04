@@ -28,6 +28,20 @@ router.get( '/:id' , (req , res) => {
     res.json(payment);
 })
 
+router.delete( '/:id' , (req , res) =>
+{
+    let payments = getPayments();
+
+    const filtered = payments.filter( p => p.id !== parseInt(req.params.id));
+
+    fs.writeFileSync(
+        path.join( __dirname , '../data/payments.json'),
+        JSON.stringify( filtered , null ,2)
+    )
+
+    res.json({ message : "Payments have been deleted"})
+})
+
 router.post ( '/' , (req , res) => 
 {
     const payments = getPayments();

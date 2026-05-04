@@ -12,6 +12,19 @@ export default function PaymentList()
         .then( data => setstaff(data) )  // save to state")
     },[]);
 
+    function handleDelete( id )
+    {
+        fetch(`http://localhost:5000/staff/${id}` , 
+            {
+                method : "DELETE"
+            })
+            .then( res => res.json() )
+            .then( () => 
+            {
+                setstaff( staff.filter( t => t.is !== id))
+            })
+    }
+
     return(
         <div className = "staff-list">
             <table className = "staff-table">
@@ -22,6 +35,7 @@ export default function PaymentList()
                         <th>Salary</th>
                         <th>Position</th>
                         <th>Age</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
 
@@ -34,6 +48,11 @@ export default function PaymentList()
                                 <td>{t.salary}</td>
                                 <td>{t.position}</td>
                                 <td>{t.age}</td>
+                                <td>
+                                    <button className = "delete-btn" onClick={() => handleDelete(t.id)}>
+                                        Delete
+                                    </button>
+                                </td>
                             </tr>
                         )
                     )}
