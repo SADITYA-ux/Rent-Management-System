@@ -22,7 +22,7 @@ export default function TenantList()
             .then( res => res.json() )
             .then( () => 
             {
-                setTenant( tenants.filter( t => t.is !== id))
+                setTenant( tenant.filter( t => t.id !== id))
             })
     }
 

@@ -10,6 +10,13 @@ function gettenants()
     return JSON.parse(data);
 }
 
+//Placeholder for apartment routes
+function getApartments()
+{
+    const Adata = fs.readFileSync( path.join( __dirname , "../data/apartments.json"));
+    return JSON.parse(Adata);
+}
+
 router.get( '/' , (req , res) =>
 {
     const tenants = gettenants();
@@ -44,18 +51,28 @@ router.delete( '/:id' , (req , res) =>
 
 router.post( '/' , (req , res) => {
     const tenants = gettenants();
+    const apartments = getApartments();
+    const Index = apartments.findIndex( a => a.number === req.body.apartmentId);
 
     const newTenant = {
         id: tenants.length + 1,
         name: req.body.name,
         phone: req.body.phone,
-        apartmentId: req.body.number,
+        apartmentId: req.body.apartmentId,
+        rent: Number(req.body.rent),
         leaseStart: req.body.leaseStart,
         leaseEnd: req.body.leaseEnd,
-        rent: req.body.rent
     };
 
     tenants.push(newTenant)
+
+    if (Index !== -1) {
+        apartments[Index].status = "occupied"
+        fs.writeFileSync(
+            path.join(__dirname, "../data/apartments.json"),
+            JSON.stringify(apartments, null, 2)
+        )
+    }
     
     fs.writeFileSync(
         path.join(__dirname, '../data/tenants.json'),
