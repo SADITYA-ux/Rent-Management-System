@@ -49,6 +49,7 @@ router.post ( '/' , (req , res) =>
     const newPayment =
     {
         id: payments.length + 1,
+        tenantId : req.body.tenantId,
         name: req.body.name,
         amount: Number(req.body.amount),
         month: req.body.month,

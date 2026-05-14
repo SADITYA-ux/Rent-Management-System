@@ -17,6 +17,12 @@ function getApartments()
     return JSON.parse(Adata);
 }
 
+function getPayments()
+{
+    const Pdata = fs.readFileSync( path.join( __dirname , "../data/payments.json"));
+    return JSON.parse(Pdata);
+}
+
 router.get( '/' , (req , res) =>
 {
     const tenants = gettenants();
@@ -49,7 +55,7 @@ router.delete( '/:id' , (req , res) =>
         if(Index !== -1)
         {
             apartments[Index].status = "vacant"
-            
+
             fs.writeFileSync(
             path.join( __dirname , "../data/apartments.json"),
             JSON.stringify(apartments, null, 2)
@@ -57,6 +63,13 @@ router.delete( '/:id' , (req , res) =>
     }
 
     const filtered = tenants.filter( t => t.id !== parseInt(req.params.id));
+    const payment = getPayments();
+    const filteredPayments = payment.filter( p => p.tenantId !== parseInt(req.params.id));
+  
+    fs.writeFileSync(
+        path.join( __dirname , '../data/payments.json'),
+        JSON.stringify( filteredPayments , null ,2)
+    )
 
     fs.writeFileSync(
         path.join( __dirname , '../data/tenants.json'),
