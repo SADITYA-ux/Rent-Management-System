@@ -1,18 +1,1 @@
-[
-  {
-    "id": 1,
-    "name": "Saditya",
-    "amount": 12000,
-    "month": "May",
-    "paidOn": "2026-05-05",
-    "status": "paid"
-  },
-  {
-    "id": 2,
-    "name": "Pedri",
-    "amount": 25000,
-    "month": "May",
-    "paidOn": "2027-05-05",
-    "status": "paid"
-  }
-]
+[]

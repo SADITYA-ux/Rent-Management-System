@@ -38,6 +38,23 @@ router.get( '/:id' , (req , res) => {
 router.delete( '/:id' , (req , res) =>
 {
     let tenants = gettenants();
+    
+    const tenant = tenants.find( t => t.id === parseInt(req.params.id));
+
+    if(tenant)
+    {
+        const apartments = getApartments();
+        const Index = apartments.findIndex( a => a.number === tenant.apartmentId);
+
+        if(Index !== -1)
+        {
+            apartments[Index].status = "vacant"
+            
+            fs.writeFileSync(
+            path.join( __dirname , "../data/apartments.json"),
+            JSON.stringify(apartments, null, 2)
+        )}
+    }
 
     const filtered = tenants.filter( t => t.id !== parseInt(req.params.id));
 

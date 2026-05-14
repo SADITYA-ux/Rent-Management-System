@@ -5,7 +5,7 @@
     "floor": "1",
     "size": "1BHK",
     "rent": "12000",
-    "status": "occupied"
+    "status": "vacant"
   },
   {
     "id": 2,
@@ -21,7 +21,7 @@
     "floor": "1",
     "size": "3BHK",
     "rent": "25000",
-    "status": "occupied"
+    "status": "vacant"
   },
   {
     "id": 4,
