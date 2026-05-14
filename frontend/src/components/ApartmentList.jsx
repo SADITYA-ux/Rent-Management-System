@@ -13,20 +13,6 @@ export default function ApartmentList()
         .then( data => setApartments(data) )// save to state")
     },[]);
 
-
-    function handleDelete( id )
-    {
-        fetch(`http://localhost:5000/apartments/${id}` ,
-            {
-                method : "DELETE"
-            })
-            .then( res => res.json() )
-            .then( () => 
-            {
-                setApartments( apartments.filter( a => a.id !== id))
-            })
-    }
-
     return(
         <div className = "apartment-list">
             <table className = "apartment-table">
@@ -54,11 +40,6 @@ export default function ApartmentList()
                                     <span className = {`status-badge ${a.status.toLowerCase()}`}>
                                         {a.status}
                                     </span>
-                                </td>
-                                <td>
-                                    <button className = "delete-btn" onClick={() => handleDelete(a.id)}>
-                                        Delete
-                                    </button>
                                 </td>
                             </tr>
                         )
